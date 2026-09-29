@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check required files exist
+        run: test -f index.html && test -f style.css && test -f script.js && test -f logic.js
+      - name: Syntax check JavaScript
+        run: |
+          node --check logic.js
+          node --check script.js
+      - name: Run unit tests
+        run: npm test
