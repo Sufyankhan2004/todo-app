@@ -2,8 +2,8 @@ const assert = require("assert");
 const { addTask, toggleTask, deleteTask, filterTasks, clearCompleted } = require("../logic.js");
 
 let t = addTask([], "Buy milk");
-   assert.strictEqual(t.length, 2, "addTask should add a task");
-   assert.strictEqual(addTask(t, "   ").length, 1, "blank tasks must be rejected");
+assert.strictEqual(t.length, 1, "addTask should add a task");
+assert.strictEqual(addTask(t, "   ").length, 1, "blank tasks must be rejected");
 
 t = toggleTask(t, t[0].id);
 assert.strictEqual(t[0].done, true, "toggleTask should mark done");
