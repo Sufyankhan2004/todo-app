@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Board - To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Task Board</h1>
+    <p id="counter" class="counter">No tasks yet</p>
+    <div class="add">
+      <input id="taskInput" type="text" placeholder="What needs doing?" aria-label="New task">
+      <button id="addBtn">Add task</button>
+    </div>
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="done">Done</button>
+    </div>
+    <ul id="taskList"></ul>
+    <p id="empty" class="empty">Nothing here. Add your first task above.</p>
+    <button id="clearBtn" class="link">Clear completed</button>
+  </main>
+  <script src="logic.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
